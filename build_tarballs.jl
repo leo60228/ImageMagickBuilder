@@ -35,7 +35,7 @@ exit
 
 # These are the platforms we will build for by default, unless further
 # platforms are passed in on the command line
-platforms = filter(e -> !(occursin("apple", e) || occursin("darwin", e)), supported_platforms())
+platforms = filter(e -> typeof(e) == Windows || typeof(e) == Linux, supported_platforms())
 
 # The products that we will ensure are always built
 products(prefix) = [
